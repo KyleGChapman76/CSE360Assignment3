@@ -7,11 +7,13 @@ package cse360assign3;
 public class Calculator{
 
 	private int total;
+	private String history;
 	
 	/* Creates an instance of the calculator class, initializing the running total to 0 */
 	public Calculator ()
 	{
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 	
 	/* Returns the current running total
@@ -28,6 +30,7 @@ public class Calculator{
 	public void add (int value)
 	{
 		total += value;
+		history = history + " + " + value;
 	}
 	
 	/* Subtracts the given int value from the running total
@@ -36,6 +39,7 @@ public class Calculator{
 	public void subtract (int value)
 	{
 		total -= value;
+		history = history + " - " + value;
 	}
 	
 	/* Multiplies the running total by the given int value
@@ -44,6 +48,7 @@ public class Calculator{
 	public void multiply (int value)
 	{
 		total *= value;
+		history = history + " * " + value;
 	}
 	
 	/* Divides the running total by the given int value. Rounds the the total down.
@@ -59,6 +64,7 @@ public class Calculator{
 		{
 			total /= value;
 		}
+		history = history + " / " + value;
 	}
 	
 	/* Returns a string that represents the history of operations applied to the running total
@@ -66,6 +72,6 @@ public class Calculator{
 	 */
 	public String getHistory ()
 	{
-		return "";
+		return history;
 	}
 }

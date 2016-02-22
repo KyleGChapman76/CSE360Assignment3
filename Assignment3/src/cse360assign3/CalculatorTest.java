@@ -87,7 +87,16 @@ public class CalculatorTest
 	@Test
 	public void testGetHistory()
 	{
-		fail("Not yet implemented");
+		Calculator calulatorInstance = new Calculator();
+		assertEquals(calulatorInstance.getHistory(),"0");
+		calulatorInstance.add(4);
+		assertEquals(calulatorInstance.getHistory(),"0 + 4");
+		calulatorInstance.subtract(2);
+		assertEquals(calulatorInstance.getHistory(),"0 + 4 - 2");
+		calulatorInstance.multiply(2);
+		assertEquals(calulatorInstance.getHistory(),"0 + 4 - 2 * 2");
+		calulatorInstance.add(5);
+		assertEquals(calulatorInstance.getHistory(),"0 + 4 - 2 * 2 + 5");
 	}
 
 }
